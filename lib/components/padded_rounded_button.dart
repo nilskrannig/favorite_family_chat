@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class PaddedButton extends StatelessWidget {
+class PaddedRoundedButton extends StatelessWidget {
   final Color color;
   final Function onPressed;
-  final String text;
+  final String title;
 
-  PaddedButton(
-      {@required this.color, @required this.onPressed, @required this.text});
+  PaddedRoundedButton(
+      {@required this.color, @required this.onPressed, @required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class PaddedButton extends StatelessWidget {
           minWidth: 200.0,
           height: 42.0,
           child: Text(
-            text,
+            title,
           ),
         ),
       ),

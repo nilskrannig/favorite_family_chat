@@ -3,7 +3,7 @@ import 'package:nilskrannig/screens/login_screen.dart';
 import 'package:nilskrannig/screens/registration_screen.dart';
 import 'package:nilskrannig/utilities/constants.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:nilskrannig/padded_button.dart';
+import 'file:///D:/Development/workspace_flutter/favorite_family_chat/lib/components/padded_rounded_button.dart';
 
 class WelcomeScreen extends StatefulWidget {
   static const String id = 'welcome_screen';
@@ -71,15 +71,15 @@ class _WelcomeScreenState extends State<WelcomeScreen>
             SizedBox(
               height: 48.0,
             ),
-            PaddedButton(
+            PaddedRoundedButton(
               color: kPrimaryColor,
               onPressed: () {
                 Navigator.pushNamed(context, LoginScreen.id);
               },
-              text: 'Log In ',
+              title: 'Log In ',
             ),
-            PaddedButton(
-              text: 'Register',
+            PaddedRoundedButton(
+              title: 'Register',
               onPressed: () {
                 Navigator.pushNamed(context, RegistrationScreen.id);
               },

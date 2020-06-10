@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nilskrannig/screens/chat_screen.dart';
 import 'package:nilskrannig/utilities/constants.dart';
-import 'package:nilskrannig/padded_button.dart';
+import 'file:///D:/Development/workspace_flutter/favorite_family_chat/lib/components/padded_rounded_button.dart';
 
 class LoginScreen extends StatefulWidget {
   static const id = 'login_screen';
@@ -79,8 +79,8 @@ class _LoginScreenState extends State<LoginScreen> {
             SizedBox(
               height: 24.0,
             ),
-            PaddedButton(
-              text: 'Log In',
+            PaddedRoundedButton(
+              title: 'Log In',
               onPressed: () {
                 //Implement login functionality.
                 Navigator.pushNamed(context, ChatScreen.id);

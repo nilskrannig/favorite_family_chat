@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nilskrannig/utilities/constants.dart';
-import 'package:nilskrannig/padded_button.dart';
+import 'file:///D:/Development/workspace_flutter/favorite_family_chat/lib/components/padded_rounded_button.dart';
 
 class RegistrationScreen extends StatefulWidget {
   static const id = 'registration_screen';
@@ -78,12 +78,12 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             SizedBox(
               height: 24.0,
             ),
-            PaddedButton(
+            PaddedRoundedButton(
               color: kDarkPrimaryColor,
               onPressed: () {
                 //Implement registration functionality.
               },
-              text: 'Register',
+              title: 'Register',
             ),
           ],
         ),
