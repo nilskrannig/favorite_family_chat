@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:nilskrannig/utilities/constants.dart';
 
 class RegistrationScreen extends StatefulWidget {
+  static const id = 'registration_screen';
+
   @override
   _RegistrationScreenState createState() => _RegistrationScreenState();
 }

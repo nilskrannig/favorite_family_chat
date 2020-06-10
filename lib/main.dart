@@ -19,12 +19,12 @@ class MyApp extends StatelessWidget {
         ),
       ),
       title: 'Lieblingsfamilie',
-      initialRoute: '/',
+      initialRoute: WelcomeScreen.id,
       routes: {
-        '/': (context) => WelcomeScreen(),
-        '/registration_screen': (context) => RegistrationScreen(),
-        '/login_screen': (context) => LoginScreen(),
-        '/chat_screen': (context) => ChatScreen(),
+        WelcomeScreen.id: (context) => WelcomeScreen(),
+        RegistrationScreen.id: (context) => RegistrationScreen(),
+        LoginScreen.id: (context) => LoginScreen(),
+        ChatScreen.id: (context) => ChatScreen(),
       },
     );
   }

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:nilskrannig/screens/login_screen.dart';
+import 'package:nilskrannig/screens/registration_screen.dart';
 import 'package:nilskrannig/utilities/constants.dart';
 
 class WelcomeScreen extends StatefulWidget {
+  static const String id = 'welcome_screen';
+
   @override
   _WelcomeScreenState createState() => _WelcomeScreenState();
 }
@@ -25,7 +28,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   height: 60.0,
                 ),
                 Text(
-                  'LiFa Chat',
+                  'FaFa Chat',
                   style: TextStyle(
                     fontSize: 45.0,
                     fontWeight: FontWeight.w900,
@@ -44,7 +47,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 borderRadius: BorderRadius.circular(30.0),
                 child: MaterialButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/login_screen');
+                    Navigator.pushNamed(context, LoginScreen.id);
                   },
                   minWidth: 200.0,
                   height: 42.0,
@@ -62,7 +65,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 elevation: 5.0,
                 child: MaterialButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/registration_screen');
+                    Navigator.pushNamed(context, RegistrationScreen.id);
                   },
                   minWidth: 200.0,
                   height: 42.0,
