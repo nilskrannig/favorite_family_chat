@@ -23,9 +23,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           children: <Widget>[
             Row(
               children: <Widget>[
-                Container(
-                  child: Image.asset('images/logo.png'),
-                  height: 60.0,
+                Hero(
+                  tag: 'logo_hero',
+                  child: Container(
+                    height: 60.0,
+                    child: Image.asset('images/logo.png'),
+                  ),
                 ),
                 Text(
                   'FaFa Chat',
