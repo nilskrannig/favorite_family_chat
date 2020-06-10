@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:nilskrannig/screens/login_screen.dart';
 import 'package:nilskrannig/screens/registration_screen.dart';
 import 'package:nilskrannig/utilities/constants.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:nilskrannig/padded_button.dart';
 
 class WelcomeScreen extends StatefulWidget {
   static const String id = 'welcome_screen';
@@ -10,11 +12,38 @@ class WelcomeScreen extends StatefulWidget {
   _WelcomeScreenState createState() => _WelcomeScreenState();
 }
 
-class _WelcomeScreenState extends State<WelcomeScreen> {
+class _WelcomeScreenState extends State<WelcomeScreen>
+    with SingleTickerProviderStateMixin {
+  AnimationController controller;
+  Animation animation;
+
+  @override
+  void initState() {
+    super.initState();
+
+    controller = AnimationController(
+      vsync: this,
+      duration: Duration(
+        seconds: 1,
+      ),
+    );
+
+    animation = ColorTween(
+      begin: kPrimaryColor,
+      end: kLightPrimaryColor,
+    ).animate(controller);
+
+    controller.forward();
+
+    controller.addListener(() {
+      setState(() {});
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kLightPrimaryColor,
+      backgroundColor: animation.value,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
@@ -30,9 +59,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     child: Image.asset('images/logo.png'),
                   ),
                 ),
-                Text(
-                  'FaFa Chat',
-                  style: TextStyle(
+                TypewriterAnimatedTextKit(
+                  text: ['FaFa Chat'],
+                  textStyle: TextStyle(
                     fontSize: 45.0,
                     fontWeight: FontWeight.w900,
                   ),
@@ -42,41 +71,19 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             SizedBox(
               height: 48.0,
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 16.0),
-              child: Material(
-                elevation: 5.0,
-                color: kPrimaryColor,
-                borderRadius: BorderRadius.circular(30.0),
-                child: MaterialButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, LoginScreen.id);
-                  },
-                  minWidth: 200.0,
-                  height: 42.0,
-                  child: Text(
-                    'Log In',
-                  ),
-                ),
-              ),
+            PaddedButton(
+              color: kPrimaryColor,
+              onPressed: () {
+                Navigator.pushNamed(context, LoginScreen.id);
+              },
+              text: 'Log In ',
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 16.0),
-              child: Material(
-                color: kDarkPrimaryColor,
-                borderRadius: BorderRadius.circular(30.0),
-                elevation: 5.0,
-                child: MaterialButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, RegistrationScreen.id);
-                  },
-                  minWidth: 200.0,
-                  height: 42.0,
-                  child: Text(
-                    'Register',
-                  ),
-                ),
-              ),
+            PaddedButton(
+              text: 'Register',
+              onPressed: () {
+                Navigator.pushNamed(context, RegistrationScreen.id);
+              },
+              color: kDarkPrimaryColor,
             ),
           ],
         ),
