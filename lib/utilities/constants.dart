@@ -45,3 +45,20 @@ const kInputDecoration = InputDecoration(
     borderRadius: BorderRadius.all(Radius.circular(32.0)),
   ),
 );
+
+const kIsMeBorderRadius = BorderRadius.only(
+  bottomLeft: Radius.circular(30.0),
+  bottomRight: Radius.circular(30.0),
+  topLeft: Radius.circular(30.0),
+);
+
+const kNotMeBorderRadius = BorderRadius.only(
+  bottomLeft: Radius.circular(30.0),
+  topRight: Radius.circular(30.0),
+  bottomRight: Radius.circular(30.0),
+);
+
+const kMessageBubbleTextStyle = TextStyle(
+  color: kTextAndIconColor,
+  fontSize: 15.0,
+);
