@@ -13,7 +13,7 @@ const kPrimaryTextColor = Color(0xff212121);
 const kSecondaryTextColor = Color(0xff757575);
 
 const kSendButtonTextStyle = TextStyle(
-  color: kPrimaryColor,
+  color: kAccentColor,
   fontWeight: FontWeight.bold,
   fontSize: 18.0,
 );
@@ -26,7 +26,7 @@ const kMessageTextFieldDecoration = InputDecoration(
 
 const kMessageContainerDecoration = BoxDecoration(
   border: Border(
-    top: BorderSide(color: kAccentColor, width: 2.0),
+    top: BorderSide(color: kDividerColor, width: 2.0),
   ),
 );
 
